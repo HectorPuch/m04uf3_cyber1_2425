@@ -75,6 +75,9 @@ Definimos la función **show_weather(city_name, latitude, longitude)**.
 
 Asignamos a la variable **url_weather** el enlace a la API de Open-Meteo.
 
+> [!NOTE]
+> El *casting* de *latitude* y *longitude* mejora la escalabilidad del código.
+
 `url_weather = "https://api.open-meteo.com/v1/forecast?latitude=" + str(latitude) + "&longitude=" + str(longitude) + "&current=temperature_2m,wind_speed_10m,relative_humidity_2m"`
 
 Utilizamos la función **urlopen()** del módulo **urllib.request** para abrir una conexión a la URL de la API (**url_weather**). El uso de **with as data:** garantiza que la conexión a la API se gestione de manera segura, cerrándose automáticamente al finalizar el bloque de código (incluso si ocurren errores durante la lectura).
